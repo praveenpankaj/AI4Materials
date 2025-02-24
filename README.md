@@ -21,6 +21,8 @@ And methodology from:
 - **Prediction & Validation**: Model evaluation using cross-validation and performance metrics.
 
 ## Insights 
+![Correlation Heat Map](https://github.com/user-attachments/assets/54c35b5e-7448-4325-8545-eabda961f048)
+
 1. Insights from the Correlation Heatmap:
 * ΔECO (KPI) has a strong negative Pearson correlation with εd (-0.88), indicating that a lower d-band center energy leads to stronger CO binding.
 * Wd and *Vad² *(0.84) are strongly correlated, aligning with the theoretical relationship from the provided methodology.
@@ -29,19 +31,27 @@ And methodology from:
 * χ and EA (0.72) show that electron affinity and local electronegativity are linked.
 * Some descriptors, like χ0 and Vad², show weak relationships, which might indicate their lesser importance in the binding energy prediction.
 
+![PCA Loadings](https://github.com/user-attachments/assets/cb7915dc-f153-4c19-bb09-fb0a7108ff77)
+
 2. PCA Insights:
 * Explained Variance: The first two principal components capture a significant portion of the variance (~70%). Adding more components does not drastically increase explained variance, suggesting a low-dimensional structure in the dataset.
 * PC1 (Primary Axis of Variation): Strongly influenced by εd, γ1, γ2, and Wd, confirming the importance of d-band characteristics.
 * PC2 (Secondary Axis of Variation): Dominated by χ, χ0, EA, and IE, indicating a role for electronegativity and ionization energy.
 Clustering
+
+![Biplot](https://github.com/user-attachments/assets/b7f4a0e9-ae62-463c-86ed-63ebda80d3e8)
 * Clusters correspond to distinct descriptor groupings, possibly separating different alloy types.
 * Descriptors like εd, γ1, and γ2 strongly influence Cluster 1 (Cu), while χ0 and IE seem more relevant to Cluster 3 (Pt).
+
+![PLS plot](https://github.com/user-attachments/assets/8c848f87-fe95-41c3-b9e8-149e55b41bef)
 
 3. PLS Regression Insights:
 * The PLS model achieves an R² of ~0.95, indicating a strong ability to predict ΔE*CO based on the descriptors. Most predicted values align well with actual values, but slight deviations exist.
 * The strongest contributors (from PLS loadings) align with εd, Wd, Vad², and γ1, reinforcing their influence on CO binding energy. χ and EA also contribute but to a lesser extent.
 
-4.   raph-Based Correlation Insights:
+![Graph Plot](https://github.com/user-attachments/assets/ac795ac5-57dd-481f-87e6-9bce7e13298c)
+
+4. Graph-Based Correlation Insights:
 * Clusters of Strongly Related Descriptors: (εd, Wd, γ1, γ2) form a tightly connected group, confirming their role in d-band characteristics. The d-band model descriptors (εd, γ1, γ2, Wd) remain central in explaining CO binding energy.
 * χ0, IE, and EA are probably redundant in their information and could be replaced with fewer fingerprint descriptors.
 * Vad² and Wd show a high correlation, consistent with their theoretical relationship.
